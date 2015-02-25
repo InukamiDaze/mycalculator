@@ -40,8 +40,16 @@ public class MyCalculator {
 	public int nfactorial(int n){
 		int factorial = 1;
 		
-		for(int i=1;i<n;i++)
-			factorial *= i;
+		if(n == 0){
+			factorial = 1;
+		}
+		else if(n < 1){
+			factorial = n;
+		}
+		else{
+			for(int i=1;i<n;i++)
+				factorial *= i;
+		}
 		
 		return factorial;
 	}
@@ -54,9 +62,12 @@ public class MyCalculator {
 		
 		while(lower<=upper){
 			middle = (lower+upper)/2;
-			if(x>a[middle]) lower = middle + 1;
-			else if(x<a[middle]) upper = middle - 1;
-			else return middle;
+			if(x>a[middle]) 
+				lower = middle + 1;
+			else if(x<a[middle]) 
+				upper = middle - 1;
+			else 
+				return middle;
 		}
 		
 		return 1;
